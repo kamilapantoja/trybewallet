@@ -3,17 +3,19 @@ import userEvent from '@testing-library/user-event';
 import { fireEvent, screen } from '@testing-library/react';
 import App from '../App';
 
-import { renderWithRouterAndStore } from './testConfig';
+import { renderWithRouterAndStore } from './helpers/testConfig';
 
-const EMAIL_INPUT_TEST_ID = 'email-input';
-const PASSWORD_INPUT_TEST_ID = 'password-input';
-const VALID_EMAIL = 'alguem@email.com';
-const VALID_PASSWORD = '123456';
-const INVALID_EMAIL_0 = 'email';
-const INVALID_EMAIL_1 = 'email@com@';
-const INVALID_EMAIL_2 = 'emailcom@';
-const INVALID_EMAIL_3 = 'alguem@email.';
-const INVALID_PASSWORD = '23456';
+import {
+  EMAIL_INPUT_TEST_ID,
+  PASSWORD_INPUT_TEST_ID,
+  VALID_EMAIL,
+  VALID_PASSWORD,
+  INVALID_EMAIL_0,
+  INVALID_EMAIL_1,
+  INVALID_EMAIL_2,
+  INVALID_EMAIL_3,
+  INVALID_PASSWORD,
+} from './helpers/constants';
 
 afterEach(() => jest.clearAllMocks());
 

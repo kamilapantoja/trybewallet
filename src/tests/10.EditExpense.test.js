@@ -1,23 +1,25 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
-import { response as mockData, initialStateWithExpenses } from './mockData';
+import { response as mockData, initialStateWithExpenses } from './mocks/mockData';
 import Wallet from '../pages/Wallet';
 
-import { renderWithRouterAndStore } from './testConfig';
+import { renderWithRouterAndStore } from './helpers/testConfig';
 
-const EDIT_INPUT_TEST_ID = 'edit-btn';
-const VALUE_INPUT_TEST_ID = 'value-input';
-const CURRENCY_INPUT_TEST_ID = 'currency-input';
-const METHOD_INPUT_TEST_ID = 'method-input';
-const TAG_INPUT_TEST_ID = 'tag-input';
-const DESCRIPTION_INPUT_TEST_ID = 'description-input';
-const BTN_EDIT_TEST_ID = 'edit-btn';
-const TOTAL_FIELD_TEST_ID = 'total-field';
+import {
+  EDIT_INPUT_TEST_ID,
+  VALUE_INPUT_TEST_ID,
+  CURRENCY_INPUT_TEST_ID,
+  METHOD_INPUT_TEST_ID,
+  TAG_INPUT_TEST_ID,
+  DESCRIPTION_INPUT_TEST_ID,
+  BTN_EDIT_TEST_ID,
+  TOTAL_FIELD_TEST_ID,
+} from './helpers/constants';
 
 afterEach(() => jest.clearAllMocks());
 
-describe('9 - Crie um botão para editar uma despesa da tabela contendo as seguintes características:', () => {
+describe('10 - Crie um botão para editar uma despesa da tabela contendo as seguintes características:', () => {
   const initial = initialStateWithExpenses;
 
   test('O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"`', () => {
